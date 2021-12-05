@@ -1,5 +1,7 @@
 package com.example.musicclub;
 
+import com.example.musicclub.Models.Music;
+
 public class ApiResponse {
     private String created;
     private int count, offset;

@@ -1,4 +1,4 @@
-package com.example.musicclub;
+package com.example.musicclub.Models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -56,7 +56,23 @@ public class Music {
         return artist;
     }
 
+    public String getArtists(){
+        String artists = "";
+
+        for (int i=0;i<artist.length;i++)
+        {
+            artists = artists + artist[i] + " ";
+        }
+
+        return artists;
+    }
+
     public void setArtist(Artist[] artist) {
         this.artist = artist;
+    }
+
+    public String toString()
+    {
+        return String.format("%s - %s",title,getArtists());
     }
 }

@@ -7,9 +7,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicclub.SearchViewController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicclub.Controllers.SearchViewController">
    <children>
       <Label layoutX="230.0" layoutY="34.0" text="Music Searching Database" />
       <HBox layoutX="114.0" layoutY="66.0" spacing="10.0">
@@ -36,13 +37,23 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="39.0" layoutY="119.0">
          <children>
-            <ListView prefHeight="200.0" prefWidth="330.0" />
-            <Label text="Click on a music to see the details">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </Label>
+            <ListView fx:id="initialMusicDataListView" prefHeight="200.0" prefWidth="330.0" />
+            <VBox fx:id="getDetailsButton" alignment="CENTER">
+               <children>
+                  <Label text="Click on a music to see the details">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Label>
+                  <Button mnemonicParsing="false" text="Get More Details -&gt;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </HBox>
+      <Label fx:id="errMsgLabel" layoutX="355.0" layoutY="345.0" prefHeight="17.0" prefWidth="53.0" />
    </children>
 </AnchorPane>

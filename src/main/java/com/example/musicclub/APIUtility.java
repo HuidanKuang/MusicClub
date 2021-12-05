@@ -42,7 +42,7 @@ public class APIUtility {
     /**
      * This will call the musicbrainz API with the specific search term
      */
-    public static ApiResponse getMoviesFromMusicbrainz(String searchTerm) throws IOException, InterruptedException {
+    public static ApiResponse getMusicsFromMusicbrainz(String searchTerm) throws IOException, InterruptedException {
         searchTerm = searchTerm.trim().replace(" ","%20");
 
         String uri = "https://musicbrainz.org/ws/2/release/?query=" + searchTerm + "&fmt=json";

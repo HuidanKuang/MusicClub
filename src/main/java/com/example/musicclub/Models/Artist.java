@@ -1,4 +1,4 @@
-package com.example.musicclub;
+package com.example.musicclub.Models;
 
 public class Artist {
     private String name;
@@ -9,5 +9,9 @@ public class Artist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String toString(){
+        return String.format("%s",name);
     }
 }
