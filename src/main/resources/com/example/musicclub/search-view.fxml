@@ -8,51 +8,81 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicclub.Controllers.SearchViewController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicclub.Controllers.SearchViewController">
    <children>
-      <Label layoutX="230.0" layoutY="34.0" text="Music Searching Database" />
-      <HBox layoutX="114.0" layoutY="66.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="39.0" layoutY="22.0">
          <children>
-            <Label text="Music Name:">
-               <padding>
-                  <Insets right="10.0" />
-               </padding>
+            <Label id="header" prefHeight="44.0" prefWidth="286.0" text="Music Searching Database">
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
-            <TextField fx:id="searchTextField">
-               <padding>
-                  <Insets left="10.0" right="10.0" />
-               </padding>
-            </TextField>
-            <Button mnemonicParsing="false" onAction="#getSearchResults" text="Get Music Info">
-               <padding>
-                  <Insets left="10.0" right="10.0" />
-               </padding>
-            </Button>
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </HBox>
-      <HBox alignment="CENTER" layoutX="39.0" layoutY="119.0">
-         <children>
-            <ListView fx:id="initialMusicDataListView" prefHeight="200.0" prefWidth="330.0" />
-            <VBox alignment="CENTER">
+            <HBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="573.0" spacing="10.0">
                <children>
-                  <Label fx:id="getDetailsLabel" text="Click on a music to see the details">
+                  <Label prefHeight="29.0" prefWidth="120.0" text="Music Name:">
                      <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        <Insets right="10.0" />
                      </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
                   </Label>
-                  <Button fx:id="getDetailsButton" mnemonicParsing="false" text="Get More Details -&gt;">
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </VBox.margin>
+                  <TextField fx:id="searchTextField" prefHeight="32.0" prefWidth="177.0">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button id="button" mnemonicParsing="false" onAction="#getSearchResults" prefHeight="31.0" prefWidth="132.0" text="Get Music Info">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
                   </Button>
                </children>
-            </VBox>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="353.0" prefWidth="726.0">
+               <children>
+                  <ListView fx:id="initialMusicDataListView" prefHeight="333.0" prefWidth="431.0" />
+                  <VBox alignment="CENTER" prefHeight="333.0" prefWidth="269.0">
+                     <children>
+                        <Label id="des" fx:id="getDetailsLabel" prefHeight="47.0" prefWidth="267.0" text="Click on a music to see the details">
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" top="10.0" />
+                           </padding>
+                        </Label>
+                        <Button id="button" fx:id="getDetailsButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="181.0" text="Get More Details -&gt;">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </HBox>
          </children>
-      </HBox>
-      <Label fx:id="errMsgLabel" layoutX="245.0" layoutY="344.0" prefHeight="17.0" prefWidth="109.0" text="Music Not Found" />
+      </VBox>
+      <Label id="des" fx:id="errMsgLabel" layoutX="511.0" layoutY="520.0" prefHeight="25.0" prefWidth="183.0" text="Music Not Found">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
    </children>
 </AnchorPane>
