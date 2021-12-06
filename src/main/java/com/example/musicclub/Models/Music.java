@@ -61,10 +61,10 @@ public class Music {
 
         for (int i=0;i<artist.length;i++)
         {
-            artists = artists + artist[i] + " ";
+            artists = artists + artist[i] + ", ";
         }
 
-        return artists;
+        return artists.substring(0,artists.length()-2);
     }
 
     public void setArtist(Artist[] artist) {
