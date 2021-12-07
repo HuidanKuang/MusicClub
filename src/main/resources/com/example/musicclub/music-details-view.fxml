@@ -16,7 +16,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicclub.Controllers.MusicDetailsController">
    <children>
       <Label id="header" fx:id="musicTitleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="217.0" layoutY="35.0" prefHeight="34.0" prefWidth="391.0" text="Music Title" />
-      <VBox alignment="CENTER" layoutX="70.66667175292969" layoutY="126.0">
+      <VBox alignment="CENTER" layoutX="71.0" layoutY="106.0">
          <children>
             <HBox alignment="CENTER">
                <children>
@@ -31,18 +31,21 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="ID in Music Brainz" />
-                        <Label text="Score" GridPane.rowIndex="1" />
+                        <Label text="Quality" GridPane.rowIndex="1" />
                         <Label text="Date" GridPane.rowIndex="2" />
                         <Label text="Country" GridPane.rowIndex="3" />
-                        <Label text="Artists" GridPane.rowIndex="4" />
-                        <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="scoreLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Status" GridPane.rowIndex="4" />
+                        <Label fx:id="idLabel" text="Label" wrapText="true" GridPane.columnIndex="1" />
+                        <Label fx:id="qualityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="dateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="countryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="artistLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="statusLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="Language" GridPane.rowIndex="5" />
+                        <Label fx:id="languageLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
                   <ImageView fitHeight="196.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
@@ -54,6 +57,9 @@
                      </HBox.margin>
                   </ImageView>
                </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
             </HBox>
             <Button id="button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="36.0" prefWidth="168.0" text="Return to Search" />
          </children>

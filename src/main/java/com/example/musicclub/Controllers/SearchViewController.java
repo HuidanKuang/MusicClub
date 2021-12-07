@@ -3,6 +3,7 @@ package com.example.musicclub.Controllers;
 import com.example.musicclub.APIUtility;
 import com.example.musicclub.ApiResponse;
 import com.example.musicclub.Models.Music;
+import com.example.musicclub.SceneChanger;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -70,5 +71,11 @@ public class SearchViewController implements Initializable {
         getDetailsLabel.setVisible(musicFound);
         getDetailsButton.setVisible(musicSelected);
         errMsgLabel.setVisible(!musicFound);
+    }
+
+    @FXML
+    private void getMusicDetails(ActionEvent event) throws IOException {
+        String musicId = initialMusicDataListView.getSelectionModel().getSelectedItem().getId();
+        SceneChanger.changeScenes(event,"music-details-view.fxml",musicId);
     }
 }

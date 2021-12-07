@@ -1,5 +1,7 @@
 package com.example.musicclub;
 
+import com.example.musicclub.Models.Music;
+import com.example.musicclub.Models.MusicDetails;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -50,11 +52,6 @@ public class APIUtility {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
 
-        //create a HttpRequest, and store the response in a file
-//        HttpResponse<Path> response = client.send(httpRequest,
-//                HttpResponse.BodyHandlers.ofFile(Paths.get("jsonData")));
-//        return getMoviesJsonFile();
-
         //this approach stores the API response to a String
         HttpResponse<String> response = client.send(httpRequest,HttpResponse.BodyHandlers.ofString());
 
@@ -69,5 +66,29 @@ public class APIUtility {
             e.printStackTrace();
         }
         return  apiResponse;
+    }
+
+    /**
+     * This will call the musicBrainz API with music ID
+     * @param musicId
+     * @return
+     * @throws IOException
+     * @throws InterruptedException
+     */
+    public static MusicDetails getMusicDetails(String musicId) throws IOException, InterruptedException {
+        musicId = musicId.trim().replace(" ","%20");
+
+        String uri = "https://musicbrainz.org/ws/2/release/" + musicId + "?fmt=json";
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(uri)).build();
+
+        //this approach stores the API response to a String
+        HttpResponse<String> response = client.send(httpRequest,HttpResponse.BodyHandlers.ofString());
+
+        String jsonString = response.body();
+        Gson gson = new Gson();
+
+        return gson.fromJson(response.body(),MusicDetails.class);
     }
 }
