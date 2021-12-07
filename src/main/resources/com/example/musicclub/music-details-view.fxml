@@ -38,7 +38,7 @@
                         <Label text="Date" GridPane.rowIndex="2" />
                         <Label text="Country" GridPane.rowIndex="3" />
                         <Label text="Status" GridPane.rowIndex="4" />
-                        <Label fx:id="idLabel" text="Label" wrapText="true" GridPane.columnIndex="1" />
+                        <Label id="musicId" fx:id="idLabel" text="Label" wrapText="true" GridPane.columnIndex="1" />
                         <Label fx:id="qualityLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="dateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="countryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />

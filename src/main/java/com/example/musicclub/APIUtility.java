@@ -20,7 +20,7 @@ public class APIUtility {
      * This method will read the file called "jsonData" and create an ApiResponse object
      * This is to ensure the API response is working
      */
-    public static ApiResponse getMoviesJsonFile()
+    public static ApiResponse getMusicsJsonFile()
     {
         //create a GSON object
         Gson gson = new Gson();
