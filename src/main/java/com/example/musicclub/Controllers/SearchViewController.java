@@ -35,6 +35,9 @@ public class SearchViewController implements Initializable {
     private TextField searchTextField;
 
     @FXML
+    private Label musicNumLabel;
+
+    @FXML
     private void getSearchResults() throws IOException, InterruptedException {
         initialMusicDataListView.getItems().clear();
 
@@ -44,6 +47,7 @@ public class SearchViewController implements Initializable {
         {
             initialMusicDataListView.getItems().addAll(apiResponse.getReleases());
             setMusicFound(true,false);
+            updateLabel();
         }
         else
         {
@@ -68,9 +72,18 @@ public class SearchViewController implements Initializable {
      */
     private void setMusicFound(boolean musicFound,boolean musicSelected){
         initialMusicDataListView.setVisible(musicFound);
+        musicNumLabel.setVisible(musicFound);
         getDetailsLabel.setVisible(musicFound);
         getDetailsButton.setVisible(musicSelected);
         errMsgLabel.setVisible(!musicFound);
+    }
+
+    /**
+     * this method will return the number of Musics
+     */
+    private void updateLabel()
+    {
+        musicNumLabel.setText("Number of Musics: " + initialMusicDataListView.getItems().size());
     }
 
     @FXML

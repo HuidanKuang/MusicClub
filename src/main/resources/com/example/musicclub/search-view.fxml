@@ -14,7 +14,7 @@
    <children>
       <VBox alignment="CENTER" layoutX="39.0" layoutY="22.0">
          <children>
-            <Label id="header" prefHeight="44.0" prefWidth="286.0" text="Music Searching Database">
+            <Label id="header" prefHeight="44.0" prefWidth="246.0" text="Music Searching Database">
                <font>
                   <Font size="16.0" />
                </font>
@@ -55,7 +55,16 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="353.0" prefWidth="726.0">
                <children>
-                  <ListView fx:id="initialMusicDataListView" prefHeight="333.0" prefWidth="431.0" />
+                  <VBox>
+                     <children>
+                        <ListView fx:id="initialMusicDataListView" prefHeight="333.0" prefWidth="431.0" />
+                        <Label fx:id="musicNumLabel" text="Musics Found: ">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
                   <VBox alignment="CENTER" prefHeight="333.0" prefWidth="269.0">
                      <children>
                         <Label id="des" fx:id="getDetailsLabel" prefHeight="47.0" prefWidth="267.0" text="Click on a music to see the details">

@@ -6,15 +6,12 @@ import com.example.musicclub.Models.MusicDetails;
 import com.example.musicclub.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class MusicDetailsController implements Initializable, InitializeMusic {
 
+public class MusicDetailsController implements InitializeMusic {
 
     @FXML
     private Label countryLabel;
@@ -37,10 +34,6 @@ public class MusicDetailsController implements Initializable, InitializeMusic {
     @FXML
     private Label languageLabel;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 
     /**
      * Given the musicID, this method will call the api/json and create a MusicDetails object.
