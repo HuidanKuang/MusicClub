@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.musicclub.Controllers.SearchViewController">
    <children>
-      <VBox alignment="CENTER" layoutX="39.0" layoutY="22.0">
+      <VBox alignment="CENTER" layoutX="37.0" layoutY="28.0" prefHeight="507.0" prefWidth="726.0">
          <children>
             <Label id="header" prefHeight="44.0" prefWidth="246.0" text="Music Searching Database">
                <font>
@@ -57,7 +57,7 @@
                <children>
                   <VBox>
                      <children>
-                        <ListView fx:id="initialMusicDataListView" prefHeight="333.0" prefWidth="431.0" />
+                        <ListView fx:id="initialMusicDataListView" prefHeight="326.0" prefWidth="431.0" />
                         <Label fx:id="musicNumLabel" text="Musics Found: ">
                            <VBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -89,7 +89,7 @@
             </HBox>
          </children>
       </VBox>
-      <Label id="des" fx:id="errMsgLabel" layoutX="511.0" layoutY="520.0" prefHeight="25.0" prefWidth="183.0" text="Music Not Found">
+      <Label id="des" fx:id="errMsgLabel" layoutX="508.0" layoutY="541.0" prefHeight="25.0" prefWidth="183.0" text="Music Not Found">
          <font>
             <Font size="13.0" />
          </font></Label>
