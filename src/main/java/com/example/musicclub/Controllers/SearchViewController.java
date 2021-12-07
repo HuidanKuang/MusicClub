@@ -74,7 +74,7 @@ public class SearchViewController implements Initializable {
     }
 
     @FXML
-    private void getMusicDetails(ActionEvent event) throws IOException {
+    private void getMusicDetails(ActionEvent event) throws IOException, InterruptedException {
         String musicId = initialMusicDataListView.getSelectionModel().getSelectedItem().getId();
         SceneChanger.changeScenes(event,"music-details-view.fxml",musicId);
     }

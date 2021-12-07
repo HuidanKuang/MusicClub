@@ -1,7 +1,10 @@
 package com.example.musicclub.Controllers;
 
 import com.example.musicclub.APIUtility;
+import com.example.musicclub.InitializeMusic;
 import com.example.musicclub.Models.MusicDetails;
+import com.example.musicclub.SceneChanger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -10,7 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MusicDetailsController implements Initializable {
+public class MusicDetailsController implements Initializable, InitializeMusic {
 
 
     @FXML
@@ -36,13 +39,7 @@ public class MusicDetailsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            loadMusicDetails("e29a0dee-c141-43b1-b0d8-f0c387c0c642");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     /**
@@ -50,8 +47,15 @@ public class MusicDetailsController implements Initializable {
      * This will be used to populate the GUI with the music details
      * @param musicId -- this is musicBrainz release id
      */
-    public void loadMusicDetails(String musicId) throws IOException, InterruptedException {
-        MusicDetails musicDetails = APIUtility.getMusicDetails(musicId);
+    public void loadMusicDetails(String musicId){
+        MusicDetails musicDetails = null;
+        try {
+            musicDetails = APIUtility.getMusicDetails(musicId);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         countryLabel.setText(musicDetails.getCountry());
         dateLabel.setText(musicDetails.getDate());
         idLabel.setText(musicDetails.getId());
@@ -60,6 +64,11 @@ public class MusicDetailsController implements Initializable {
         statusLabel.setText(musicDetails.getStatus());
         languageLabel.setText(String.valueOf(musicDetails.getLanguage()));
 
+    }
+
+    @FXML
+    private void returnToSearch(ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event,"search-view.fxml");
     }
 
 }
